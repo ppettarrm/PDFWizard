@@ -1,14 +1,25 @@
-import PIL.Image
-import fitz
+from pathlib import Path
+import PIL.Image #pillow
+import fitz #PyMuPDF
 import io
 
 
 def export_images() -> None:
+    print("Insert absolute path to pdf:\n")
+    try:
+        path_to_pdf = Path(input())
+    except:
+        print("Invalid path!")
+        return
 
-    from_pdf = ""
-    output_path = ""
+    print("Insert absolute path to folder where you want to save your extracted images:\n")
+    try:
+        output_path = Path(input())
+    except:
+        print("Invalid path!")
+        return
 
-    pdf = fitz.open(from_pdf)
+    pdf = fitz.open(path_to_pdf)
     count = 1
     for i in range(len(pdf)):
         page = pdf[i]

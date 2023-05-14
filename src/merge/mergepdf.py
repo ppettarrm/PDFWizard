@@ -1,8 +1,8 @@
 from PyPDF2 import PdfMerger
 from pathlib import Path
 
-def merge_pdf() -> None:
 
+def merge_pdf() -> None:
     print("Insert absolute path to folder with pdfs that you want to merge:\n")
     try:
         path_to_pdfs = Path(input())
