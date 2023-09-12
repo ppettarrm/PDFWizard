@@ -6,4 +6,5 @@ The PDF Manipulator is a versatile open-source application that allows users to 
 ## Authors
 
 - [@ppettarrm](https://www.github.com/ppettarrm)
+- [@MiletaA](https://github.com/MiletaA)
 
