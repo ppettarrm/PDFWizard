@@ -1,17 +1,17 @@
 from extract import extractText, extractImages, extractTables
 from merge import mergepdf
 from split import split
-
+from translate.translate import translate_pdf
 
 def main() -> None:
-    print("Choose option:\n#-----------------------#\n1. MergePDF\n2. ExtractPDF\n3. SplitPDF")
+    print("Choose option:\n#-----------------------#\n1. MergePDF\n2. ExtractPDF\n3. SplitPDF\n4. TranslatePDF")
     try:
         pdf_operation_type = int(input())
     except:
         print("Invalid input!")
         return
 
-    if pdf_operation_type < 1 or pdf_operation_type > 3:
+    if pdf_operation_type < 1 or pdf_operation_type > 4:
         print("Unknown operation!")
         return
 
@@ -32,13 +32,15 @@ def main() -> None:
 
             match extract_type:
                 case 1:
-                    extractText.export_text()
+                    extractText.extract_text()
                 case 2:
-                    extractImages.export_images()
-                case _:
-                    extractTables.export_tables()
-        case _:
+                    extractImages.extract_images()
+                case 3:
+                    extractTables.extract_tables()
+        case 3:
             split.split_pdf()
+        case 4:
+            translate_pdf()
 
     return
 
